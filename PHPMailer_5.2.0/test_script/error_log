@@ -1,0 +1,29 @@
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 108
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: submit in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 29
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: From_Name in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 314
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: From_Email in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 319
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: To_Name in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 324
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: To_Email in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 329
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: cc_Email in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 334
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: bcc_Email in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 339
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: Subject in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 344
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: Message in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 349
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: test_type in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 360
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: test_type in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 364
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: test_type in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 368
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: test_type in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 372
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: smtp_debug in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 383
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: smtp_server in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 392
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: smtp_port in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 397
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: smtp_authenticate in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 402
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: authenticate_username in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 407
+[06-Nov-2017 10:55:06 Etc/GMT] PHP Notice:  Undefined index: authenticate_password in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 412
+[06-Nov-2017 10:57:03 Etc/GMT] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 108
+[06-Nov-2017 10:57:03 Etc/GMT] PHP Warning:  require_once(../class.html2text.inc.php): failed to open stream: No such file or directory in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107
+[06-Nov-2017 10:57:03 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required '../class.html2text.inc.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107
+[06-Nov-2017 10:57:34 Etc/GMT] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 108
+[06-Nov-2017 10:57:34 Etc/GMT] PHP Warning:  require_once(../class.html2text.inc.php): failed to open stream: No such file or directory in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107
+[06-Nov-2017 10:57:34 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required '../class.html2text.inc.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107
+[06-Nov-2017 10:57:38 Etc/GMT] PHP Deprecated:  Assigning the return value of new by reference is deprecated in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 108
+[06-Nov-2017 10:57:38 Etc/GMT] PHP Warning:  require_once(../class.html2text.inc.php): failed to open stream: No such file or directory in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107
+[06-Nov-2017 10:57:38 Etc/GMT] PHP Fatal error:  require_once(): Failed opening required '../class.html2text.inc.php' (include_path='.:/opt/alt/php54/usr/share/pear:/opt/alt/php54/usr/share/php') in /home/mobilytb/public_html/mobile/PHPMailer_5.2.0/test_script/index.php on line 107

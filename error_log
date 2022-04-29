@@ -1,0 +1,4 @@
+[16-Apr-2018 00:08:15 America/Chicago] PHP Warning:  unlink(): http does not allow unlinking in /home1/abhidemo/public_html/playstore/app_dashboard/deletecategory.php on line 23
+[30-Oct-2019 06:17:29 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'abhidemo_foodus'@'localhost' (using password: YES) in /home1/abhidemo/public_html/demo/foodus/config.php on line 8
+[30-Oct-2019 06:18:11 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'abhidemo_foodus'@'localhost' (using password: YES) in /home1/abhidemo/public_html/demo/foodus/config.php on line 8
+[30-Oct-2019 06:19:24 America/Chicago] PHP Warning:  mysqli::mysqli(): (28000/1045): Access denied for user 'abhidemo_foodus'@'localhost' (using password: YES) in /home1/abhidemo/public_html/demo/foodus/config.php on line 8

@@ -1,0 +1,129 @@
+<?php
+
+include '../config.php';
+
+
+$user_id = $_POST['user_id'];
+
+
+if (!empty($user_id)) {
+
+
+    $sql = "SELECT * FROM `users` WHERE `id`='" . $user_id . "'";
+    $check = mysqli_query($conn, $sql);
+    $rowcount = mysqli_num_rows($check);
+    if ($rowcount > 0) {
+        $resultcheck = mysqli_fetch_array($check, MYSQLI_BOTH);
+        $uid = $resultcheck['uid'];
+        $cart_id = $resultcheck['cart_id'];
+        $user_email = $resultcheck['email'];
+        $status = $resultcheck['status'];
+        if ($status == 'ACTIVE') {
+            ///active user then check cart of the user ////
+
+            $sqlwish = "SELECT * FROM `users_cart` WHERE `uid`='" . $uid . "' order by id DESC";
+            $checkcart = mysqli_query($conn, $sqlwish);
+            $rowcount = mysqli_num_rows($checkcart);
+///checking for empty cart///
+//echo $rowcount;
+            if ($rowcount > 0) {
+                ////IF cart is not empty fetching details /////
+                
+                while ($cartitems = mysqli_fetch_array($checkcart)) {
+
+                    ///saving product id asd array for future///
+                    $product_ids[] = $cartitems['product_id'];
+                    //////////////////////////////////////////////
+                    $varient_id = $cartitems['varient_id'];
+                    $varient_quantity = $cartitems['varient_quantity'];
+                    $product_id = $cartitems['product_id'];
+
+                    $qry_var = "select * from products_variant where id ='" . $varient_id . "' AND product_id='" . $product_id . "'";
+                    $res_var = mysqli_query($conn, $qry_var);
+                    //$jsonvar = array();
+
+                    while ($records_var = mysqli_fetch_array($res_var)) {
+                        $var_name = $records_var['variant_name'];
+                        $var_price = $records_var['variant_price'];
+                        $varient_ids = $records_var['id'];
+                        $jsonvar[] = array("varientid" => $varient_ids, "variantname" => $var_name, "varprice" => $var_price, "varquantity" => $varient_quantity);
+                    }
+                    foreach ($product_ids as $product_id) {
+                        $qry_ext = "select * from cart_extra where uid ='" . $uid . "' AND varient_id='" . $varient_id . "'";
+                        $res_ext = mysqli_query($conn, $qry_ext);
+                        while ($records_extcart = mysqli_fetch_array($res_ext)) {
+                            $extraid = $records_extcart['extra_id'];
+                            $extra_quantity=$records_extcart['extra_quantity'];
+                            $qry_ext1 = "select * from products_extra WHERE   product_id='" . $product_id . "' AND id='" . $extraid . "'";
+                            $res_ext1 = mysqli_query($conn, $qry_ext1);
+                            while ($records_ext = mysqli_fetch_array($res_ext1)) {
+
+                                $ext_name = $records_ext['extra_name'];
+                                $ext_price = $records_ext['extra_price'];
+                                $ext_id = $records_ext['id'];
+                                $jsonext[] = array("extraid" => $ext_id, "extraname" => $ext_name, "extraprice" => $ext_price,"extraquantity"=>$extra_quantity);
+                            }
+                        }
+                    }
+                    foreach ($product_ids as $product_id) {
+
+                        $qry = "SELECT * FROM app_productsmain where product_id='" . $product_id . "'";
+                        $res1 = mysqli_query($conn, $qry);
+
+
+
+                        while ($records1 = mysqli_fetch_array($res1, MYSQLI_ASSOC)) {
+                            $product_id = $records1['product_id'];
+                            $product_des = $records1['description'];
+                            $product_des = htmlspecialchars_decode(str_replace("&quot;", "\"", $product_des));
+                            $product_name = $records1['product_name'];
+                            $product_status = $records1['product_status'];
+                            $product_image_primary = $serverimg . $records1['primary_image'];
+                            $product_limit = $records1['plimit'];
+                        }
+                    }
+                    $json1[] = array("productId" => $product_id, "productName" => $product_name, "status" => $product_status, "primaryimage" => $product_image_primary, "description" => $product_des, "plimit" => $product_limit,  "variants" => $jsonvar, "extra" => $jsonext);
+                
+                    
+                    $jsonmain=array("success"=>'true', "message"=>'verified',"userid"=>$user_id,"useremail"=>$user_email,"products"=>$json1);
+                        }
+
+               
+                print_r(json_encode($jsonmain));
+
+                unset($jsonvar);
+
+
+                unset($jsonext);
+
+
+                unset($json1);
+                unset($jsonmain);
+            } else {
+                $minfo = array("success" => 'true', "message" => 'empty cart');
+                $jsondata = json_encode($minfo);
+                print_r($jsondata);
+                mysqli_close($conn);
+                exit();
+            }
+        } else {
+            $minfo = array("success" => 'false', "message" => 'please verify your mail');
+            $jsondata = json_encode($minfo);
+            print_r($jsondata);
+            mysqli_close($conn);
+            exit();
+        }
+    } else {
+        $minfo = array("success" => 'false', "message" => 'user not registered');
+        $jsondata = json_encode($minfo);
+        print_r($jsondata);
+        mysqli_close($conn);
+        exit();
+    }
+} else {
+    $minfo = array("success" => 'false', "message" => 'empty fields not allowed');
+    $jsondata = json_encode($minfo);
+    print_r($jsondata);
+    mysqli_close($conn);
+    exit();
+}    

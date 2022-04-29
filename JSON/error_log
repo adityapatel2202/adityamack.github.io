@@ -1,0 +1,7 @@
+[10-Sep-2020 05:29:22 America/Chicago] PHP Fatal error:  Uncaught Stripe\Error\InvalidRequest: No such token: 'pi_1HPkTkCKqcp2BjAv4QI02pED_secret_CCjENnpycLQ45b2O3eWzI4bTd' in /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiRequestor.php:124
+Stack trace:
+#0 /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiRequestor.php(102): Stripe\ApiRequestor::_specificAPIError('{\n  "error": {\n...', 400, Array, Array, Array)
+#1 /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiRequestor.php(309): Stripe\ApiRequestor->handleErrorResponse('{\n  "error": {\n...', 400, Array, Array)
+#2 /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiRequestor.php(65): Stripe\ApiRequestor->_interpretResponse('{\n  "error": {\n...', 400, Array)
+#3 /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiResource.php(119): Stripe\ApiRequestor->request('post', '/v1/charges', Array, Array)
+#4 /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiResource.php(158): Stripe\ApiResource::_staticRequest('post', '/v1/charges', Array in /home1/abhidemo/public_html/playstore/foodus/JSON/Stripe/lib/ApiRequestor.php on line 124
